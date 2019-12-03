@@ -24,9 +24,10 @@ exports.handler = async function(event, context) {
   // create message
   const now = new Date();
   const Today =  now.getDate();
-  const mention = "<@" + member[Today] + ">";
+  const partDate = parseInt(Today) + 1;
+  const mention = "<@" + member[partDate] + ">";
   let message = mention + "\n";
-  message += '*' + "Advent Calendar " + Today + "日目 よろしくお願いします！" + '*' + "\n";
+  message += '*' + "明日は Advent Calendar " + partDate + "日目です！よろしくお願いします！" + '*' + "\n";
   message += 'https://adventar.org/calendars/4548';
 
   // Request configure
